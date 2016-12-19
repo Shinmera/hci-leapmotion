@@ -1,0 +1,94 @@
+%%% Note to contributors
+% Only work within the files that match the sections assigned to you.
+% Do not change this document unless absolutely necessary, and if you
+% do, make sure to avoid merge conflicts by pulling with rebase first.
+% 
+% Compile using LuaTeX.
+
+\providecommand{\doctitle}{Usability of the Leap Motion as a Game Input Device}
+\providecommand{\docauthor}{Nicolas Hafner, Yassine Harzallah, Dagem Kifle}
+
+\documentclass[12pt,a4paper,titlepage]{article}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{textcomp}
+\usepackage{fix-cm}
+\usepackage{ulem}
+\usepackage{fontspec}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{esint}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{fix-cm}
+\usepackage{graphicx}
+\usepackage[breaklinks]{hyperref}
+\usepackage[backend=biber,style=numeric,natbib=true]{biblatex}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{datetime}
+\usepackage[perpage,para,bottom,marginal]{footmisc}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{environ}
+\usepackage{tabularx}
+\newdateformat{dmny}{\monthname[\THEMONTH] \THEYEAR}
+\newdateformat{dyo}{\THEYEAR}
+\setlength{\headheight}{30pt}
+\pagestyle{fancy}
+
+\hypersetup{
+  colorlinks,
+  linkcolor={red!50!black},
+  citecolor={blue!50!black},
+  urlcolor={blue!80!black}
+}
+
+\let\originalsubsection\subsection
+\renewcommand{\subsection}[2]{%
+  \originalsubsection{#1}%
+  \vspace*{-0.8cm}%
+  \begin{flushright}%
+    #2%
+  \end{flushright}%
+}
+
+%% These fonts are non-free and can be obtained on
+%% http://practicaltypography.com/equity.html
+% \setmainfont[Ligatures=TeX]{Equity Text B}
+% \setsansfont[Ligatures=TeX]{Concourse T3}
+% \setmonofont{Triplicate T4}
+
+\title{\doctitle}
+\author{\docauthor}
+\date{\d_mny\today}
+
+\rhead{\doctitle}
+\cfoot{\thepage}
+\rfoot{\dmny\today}
+
+\addbibresource{1-introduction.bib}
+\addbibresource{2-method.bib}
+\addbibresource{3-results.bib}
+\addbibresource{4-conclusion.bib}
+
+\begin{document}
+\input{0-titlepage}
+\input{1-introduction}
+\input{2-method}
+\input{3-results}
+\input{4-conclusion}
+\printbibliography
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-engine: luatex
+%%% End:
